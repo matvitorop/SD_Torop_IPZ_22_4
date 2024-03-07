@@ -23,6 +23,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "KISS, YAGNI, DRY", "KISS, Y
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "KISS_YAGNI_DRY", "KISS\KISS_YAGNI_DRY.csproj", "{9F678E72-9FED-4D5D-83D8-F0EF430BBE9F}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Diagrams", "Diagrams", "{C2EE11F1-FBC6-4B9E-8397-96ADDEDF8DEB}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
