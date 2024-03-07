@@ -15,12 +15,14 @@
 ### Single responsibility
 Do demonstrate this principle of programming, I had to follow the rule that each class should do one task, so methods, that make another sphere field of activity, I put in another class with static methods. For example, for class `Money`, i made class [MoneyDefaultOperations](./Single%20Resposibility/MoneyDefaultOperations.cs#L11-L14), that print default info about class Money. Also, I did the same for class `Reporting`, where was placed methods for [Generating the report about warehouse](./Single%20Resposibility/ReportingManager.cs#L11), because another methods in `Reporting` works as simple get/set methods and for [Product](./Single%20Responsibility/ProductDefaultOperations.cs#L15), where I placed method for reducing the price of product.
 ### Open/closed
-Main feature of this principle - class must be able to expansion, not for changing. So I developed interface `IMoney` with void method [PrintAmount](./Open)
-
-
+Main feature of this principle - class must be able to expansion, not for changing. So I developed interface `IMoney` with void method [PrintAmount](./OpenClosed/Money.cs#L5) due to different currency has self name of a `bill` and `kopeck`. Than i made abstarct class `Money` and then i can imitating this class by different currency, as [GBP](./OpenClosed/MoneyGBP.cs), [USD](./OpenClosed/MoneyUSD.cs) and [UAH](./OpenClosed/MoneyUAH.cs) and realizing new features for each currency. Also for this method i can link [ReportGenerators](./OpenClosed/IReportGenerate.cs#L9-L48), but this sctructure i suitable for `DIP principle`
 ### Liskov substitution
+With this principle, a child class should complement, not change, the behavior of the parent class, so i showed it child class `LostedProduct`, that [working as](./LiskovSP/LostedProduct.cs) `Product` but have it`s own mathods, that just [expand features](./LiskovSP/LostedProduct.cs#L13-L22). 
 ### Interface segregation
+Objects must not depend on methods they do not use. In this case, 3 interfaces instead of 1, that have `method of reporting` in [Console](./InterfaceSP/IReportConsole), [File](./InterfaceSP/IReportFile) or [Server](./InterfaceSP/IReportServer) and then i using interface that i need for specific class. 
 ### Dependency inversion
+Higher entity mustn't depends on lower methods or features. It should be the other way around. So I made in [IReportGenerate](./DependencyIP/IReportGenerate.cs) few classes, that using interface `IReportGenerate` and then i created [ReportClient](./DependencyIP/IReportGenerate.cs#L50-L63) that using class with the parent class as an interface that we define in just [one piece of code](./DependencyIP/Reporting.cs#L73-L77). In this case, we do not depend on which class will be used.
 ### Keep it simple, stupid
+With this principle, code must be very simple, so, for example, i changed fields access on `internal` so, somewhere it can be easier to write the code, and simplified method [ReducePrice](./KISS/Product.cs#L82-L100). Also all `get/set methods` was changed on `properties` to make class more readable.
 ### You aren`t gonna need it
 ### Don`t repeat yourself
