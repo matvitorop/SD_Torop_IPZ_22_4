@@ -1,5 +1,5 @@
 # Software design Lab №1 
-## Author: Torop Matvii
+## Author: Torop Matvii, IPZ-22-4
 
 - This lab was maded to use programming principles, that can improve understanding of clean and understandable code for all programmers.
 - To demonstrate SOLID principles more cleanly, i made 5 separate catalogs for them in. Also, I made KISS, YAGNI and DRY principles in 1 class library `/KISS`, because, in my case they didn't interfere with each other.
@@ -25,4 +25,8 @@ Higher entity mustn't depends on lower methods or features. It should be the oth
 ### Keep it simple, stupid
 With this principle, code must be very simple, so, for example, i changed fields access on `internal` so, somewhere it can be easier to write the code, and simplified method [ReducePrice](./KISS/Product.cs#L82-L100). Also all `get/set methods` was changed on `properties` to make class more readable.
 ### You aren`t gonna need it
+In class mustn't be functionality that is not used, so i `deleted bool type` of get/set methods (properties). This principle is linked with previous, because both of them trying to make the code more easy and more readable, so transformig get/set methods into properties is also YAGNI impact.  
 ### Don`t repeat yourself
+This principle speaks for itself. From the beginning, method [FindWarehouse](./KISS/Reporting.cs#L52-L55) was created to `not copy code for finding elements in list`. Moreover, I made method [IsValidString](./KISS/Product.cs#L25-L28) to not copy string validation in methods.
+
+_Hope this code tutorial was useful for understanding structure of this solution. Please, send feedback for additional questions_
