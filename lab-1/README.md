@@ -29,4 +29,4 @@ In class mustn't be functionality that is not used, so i `deleted bool type` of 
 ### Don`t repeat yourself
 This principle speaks for itself. From the beginning, method [FindWarehouse](./KISS/Reporting.cs#L52-L55) was created to `not copy code for finding elements in list`. Moreover, I made method [IsValidString](./KISS/Product.cs#L25-L28) to not copy string validation in methods.
 
-_Hope this code tutorial was useful for understanding structure of this solution. Please, send feedback for additional questions_
+**_Hope this code tutorial was useful for understanding structure of this solution. Please, send feedback for additional questions_**
