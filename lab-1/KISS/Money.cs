@@ -8,54 +8,31 @@ namespace KISS
 {
     public class Money
     {
-        private int mainPart;
-        private int fractionalPart;
+        protected int mainPart;
+        protected int fractionalPart;
 
         public Money(int mainPart, int fractionalPart)
         {
             this.mainPart = mainPart;
             this.fractionalPart = fractionalPart;
         }
-
-        public int getMainPart()
+        
+        //СПРОЩЕНИЙ НЕПОТРІБНИЙ ФУНКЦІОНАЛ GET/SET ЗА ДОПОМОГОЮ YAGNI
+        public int MainPart
         {
-            return mainPart;
+            get { return mainPart; }
+            set { mainPart = value; }
+        }
+        //СПРОЩЕНИЙ НЕПОТРІБНИЙ ФУНКЦІОНАЛ GET/SET ЗА ДОПОМОГОЮ YAGNI
+        public int FractionalPart
+        {
+            get { return fractionalPart; }
+            set { fractionalPart = value; }
         }
 
-        public int getFractionalPart()
-        {
-            return fractionalPart;
-        }
-
-        public bool setMainPart(int newMainPart)
-        {
-            if (mainPart != newMainPart)
-            {
-                mainPart = newMainPart;
-                return true;
-            }
-            else
-            {
-                return false;
-            }
-        }
-
-        public bool setFractionalPart(int newFractionalPart)
-        {
-            if (fractionalPart != newFractionalPart) 
-            {
-                fractionalPart = newFractionalPart;
-                return true;
-            }
-            else
-            {
-                return false;
-            }
-            
-        }
         public void PrintAmount()
         {
-            Console.WriteLine($"Total summ = {getMainPart()}.{getFractionalPart()}");
+            Console.WriteLine($"Total summ = {MainPart}.{FractionalPart}");
         }
 
     }

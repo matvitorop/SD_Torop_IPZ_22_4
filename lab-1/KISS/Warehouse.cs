@@ -9,9 +9,9 @@ namespace KISS
     public class Warehouse
     {
         internal Product product;
-        internal int amount;
-        internal string unit;
-        internal DateTime lastDelivery;
+        protected int amount;
+        protected string unit;
+        protected DateTime lastDelivery;
 
         public Warehouse(Product product, int amount, string unit, DateTime lastDelivery)
         {

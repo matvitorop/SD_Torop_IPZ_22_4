@@ -59,7 +59,7 @@
             Console.WriteLine("{0,-20} {1,-10} {2,-10} {3,-20}", "Product", "Amount", "Unit", "Last Delivery");
             foreach (Warehouse warehouse in warehouseList)
             {
-                Console.WriteLine("{0,-20} {1,-10} {2,-10} {3,-20}", warehouse.Product.name, warehouse.Amount, warehouse.Unit, warehouse.LastDelivery);
+                Console.WriteLine("{0,-20} {1,-10} {2,-10} {3,-20}", warehouse.Product.Name, warehouse.Amount, warehouse.Unit, warehouse.LastDelivery);
             }
         }
     }

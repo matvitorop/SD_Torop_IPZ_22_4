@@ -10,9 +10,9 @@ namespace KISS
     {
         public Money price;
 
-        internal string name;
+        protected string name;
 
-        internal string description;
+        protected string description;
 
         public Product(Money price, string name, string description)
         {
@@ -20,50 +20,54 @@ namespace KISS
             this.name = name;
             this.description = description;
         }
-
-        public double getPrice()
+        
+        //СПРОЩЕНИЙ НЕПОТРІБНИЙ ФУНКЦІОНАЛ GET/SET ЗА ДОПОМОГОЮ YAGNI
+        public double Price
         {
-            return (double)price.getMainPart() + (double)price.getFractionalPart() / 100;
-        }
-
-        public string getName()
-        {
-            return name;
-        }
-        public string getDescription()
-        {
-            return description;
-        }
-
-        public bool setPrice(int mainPart, int fractPart)
-        {
-            price.setMainPart(mainPart);
-            price.setFractionalPart(fractPart);
-
-            return true;
-        }
-        public bool setName(string name)
-        {
-            if (!string.IsNullOrEmpty(name))
-            {
-                this.name = name;
-                return true;
+            get { return (double)price.MainPart + (double)price.FractionalPart / 100; }
+            set 
+            { 
+                price.MainPart = (int)value;
+                price.FractionalPart = (int)((value - (int)value) * 100);
             }
-            return false;
         }
-        public bool setDescription(string description)
-        {   
-            this.description = description;
-            return true;
+        
+        //СПРОЩЕНИЙ НЕПОТРІБНИЙ ФУНКЦІОНАЛ GET/SET ЗА ДОПОМОГОЮ YAGNI
+        public string Name
+        {
+            get { return name; }
+            set
+            {
+                if (!string.IsNullOrEmpty(value))
+                {
+                    this.name = value;   
+                }
+            }
+        }
+        
+        //СПРОЩЕНИЙ НЕПОТРІБНИЙ ФУНКЦІОНАЛ GET/SET ЗА ДОПОМОГОЮ YAGNI
+        public string Description
+        {
+            get { return description; }
+            set
+            {
+                if (!string.IsNullOrEmpty(value))
+                {
+                    this.description = value;
+                }
+            }
         }
 
+        //СПРОЩЕНИЙ НЕПОТРІБНИЙ ФУНКЦІОНАЛ GET/SET ЗА ДОПОМОГОЮ YAGNI
         public void ReducePrice(double amount)
         {
 
-            double newPrice = getPrice() - amount;
+            double newPrice = Price - amount;
             if (newPrice >= 0)
             {
-                setPrice((int)newPrice, (int)((newPrice - (int)newPrice) * 100));
+                Price  = newPrice;
+
+                //setPrice((int)newPrice, (int)((newPrice - (int)newPrice) * 100));
             }
 
             //НЕПОТРІБНИЙ КОД, СПРОЩЕНИЙ ЗА ДОПОМОГОЮ ПРИНЦИПУ KISS:

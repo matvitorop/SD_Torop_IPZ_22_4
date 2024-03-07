@@ -124,7 +124,7 @@ report_fifth.RegisterIncoming(product1_fidth, 12, "kg", DateTime.Now);
 report_fifth.GenerateInventoryReport();
 
 
-//====================================ВИКОРИСТАНННЯ ПРИНЦИПУ KEEP IT SIMPLE, STUPID====================================
+//====================================ВИКОРИСТАНННЯ ПРИНЦИПУ KEEP IT SIMPLE, STUPID | You aren't gonna need it | Don’t repeat yourself====================================
 Console.WriteLine("\n\nВИКОРИСТАНННЯ ПРИНЦИПУ KEEP IT SIMPLE, STUPID");
 
 KISS.Money money_sixth = new KISS.Money(100, 15);
@@ -132,7 +132,7 @@ KISS.Money money_sixth = new KISS.Money(100, 15);
 KISS.Product product_sixth = new KISS.Product(money_sixth, "Манго", "Смачна та поживна їжа");
 KISS.Product product1_sixth = new KISS.Product(money_sixth, "Банан", "Смачний та корисний фрукт");
 product1_sixth.ReducePrice(10.30);
-Console.WriteLine(product1_sixth.getPrice());
+Console.WriteLine(product1_sixth.Price);
 
 KISS.Reporting report_sixth = new KISS.Reporting();
 
