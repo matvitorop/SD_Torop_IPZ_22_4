@@ -13,7 +13,7 @@
   - [x] **You aren`t gonna need it**
   - [x] **Don`t repeat yourself**
 ### Single responsibility
-Do demonstrate this principle of programming, I had to follow the rule that each class should do one task, so methods, that make another sphere field of activity, I put in another class with static methods. For example, for class `Money`, i made class [MoneyDefaultOperations](./Single%20Responsibility/MoneyDefaultOperations.cs#L11-L14), that print default info about class Money. Also, I did the same for class `Reporting`, where was placed methods for [Generating the report about warehouse](./Single%20Responsibility/ReportingMenager.cs#L11), because another methods in `Reporting` works as simple get/set methods and for [Product](./Single%20Responsibility/ProductDefaultOperations.cs#L15), where I placed method for reducing the price of product.
+Do demonstrate this principle of programming, I had to follow the rule that each class should do one task, so methods, that make another sphere field of activity, I put in another class with static methods. For example, for class `Money`, i made class [MoneyDefaultOperations](./SingleResponsibility/MoneyDefaultOperations.cs#L11-L14), that print default info about class Money. Also, I did the same for class `Reporting`, where was placed methods for [Generating the report about warehouse](./Single%20Responsibility/ReportingMenager.cs#L11), because another methods in `Reporting` works as simple get/set methods and for [Product](./Single%20Responsibility/ProductDefaultOperations.cs#L15), where I placed method for reducing the price of product.
 ### Open/closed
 Main feature of this principle - class must be able to expansion, not for changing. So I developed interface `IMoney` with void method [PrintAmount](./Open)
 
