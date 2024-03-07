@@ -21,6 +21,12 @@ namespace KISS
             this.description = description;
         }
         
+        //ЗМІНА ПОВТОРЮВАНОГО КОДУ З ВИКОРИСТАННЯМ DRY
+        private bool IsValidString(string value)
+        {
+            return !string.IsNullOrEmpty(value);
+        }
+
         //СПРОЩЕНИЙ НЕПОТРІБНИЙ ФУНКЦІОНАЛ GET/SET ЗА ДОПОМОГОЮ YAGNI
         public double Price
         {
@@ -32,13 +38,14 @@ namespace KISS
             }
         }
         
+
         //СПРОЩЕНИЙ НЕПОТРІБНИЙ ФУНКЦІОНАЛ GET/SET ЗА ДОПОМОГОЮ YAGNI
         public string Name
         {
             get { return name; }
             set
             {
-                if (!string.IsNullOrEmpty(value))
+                if (IsValidString(value))
                 {
                     this.name = value;   
                 }
@@ -51,7 +58,7 @@ namespace KISS
             get { return description; }
             set
             {
-                if (!string.IsNullOrEmpty(value))
+                if (IsValidString(value))
                 {
                     this.description = value;
                 }

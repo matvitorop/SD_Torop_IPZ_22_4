@@ -48,9 +48,16 @@
             }
         }
 
+        //ВИКОРИСТАННЯ ПРИНЦИПУ DRY
         private Warehouse FindWarehouse(Product product)
         {
             return warehouseList.FirstOrDefault(warehouse => warehouse.Product.Equals(product));
+        }
+
+        //ЗМІНА ПОВТОРЮВАНОГО КОДУ З ВИКОРИСТАННЯМ DRY
+        private void PrintInventoryLine(string productName, int amount, string unit, DateTime lastDelivery)
+        {
+            Console.WriteLine("{0,-20} {1,-10} {2,-10} {3,-20}", productName, amount, unit, lastDelivery);
         }
 
         public void GenerateInventoryReport()
@@ -59,7 +66,7 @@
             Console.WriteLine("{0,-20} {1,-10} {2,-10} {3,-20}", "Product", "Amount", "Unit", "Last Delivery");
             foreach (Warehouse warehouse in warehouseList)
             {
-                Console.WriteLine("{0,-20} {1,-10} {2,-10} {3,-20}", warehouse.Product.Name, warehouse.Amount, warehouse.Unit, warehouse.LastDelivery);
+                PrintInventoryLine(warehouse.Product.Name, warehouse.Amount, warehouse.Unit, warehouse.LastDelivery);
             }
         }
     }

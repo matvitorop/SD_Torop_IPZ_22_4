@@ -125,7 +125,7 @@ report_fifth.GenerateInventoryReport();
 
 
 //====================================ВИКОРИСТАНННЯ ПРИНЦИПУ KEEP IT SIMPLE, STUPID | You aren't gonna need it | Don’t repeat yourself====================================
-Console.WriteLine("\n\nВИКОРИСТАНННЯ ПРИНЦИПУ KEEP IT SIMPLE, STUPID");
+Console.WriteLine("\n\nВИКОРИСТАНННЯ ПРИНЦИПУ KEEP IT SIMPLE, STUPID | You aren't gonna need it | Don’t repeat yourself");
 
 KISS.Money money_sixth = new KISS.Money(100, 15);
 
