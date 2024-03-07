@@ -4,6 +4,7 @@ using OpenClosed;
 using LiskovSP;
 using InterfaceSP;
 using DependencyIP;
+using KISS;
 
 //====================================ВИКОРИСТАНННЯ ПРИНЦИПУ SINGLE RESPONSIBILITY====================================
 Console.WriteLine("\n\nВИКОРИСТАНННЯ ПРИНЦИПУ SINGLE RESPONSIBILITY");
@@ -121,3 +122,21 @@ report_fifth.RegisterIncoming(product_fifth, 10, "kg", DateTime.Now);
 report_fifth.RegisterIncoming(product1_fidth, 12, "kg", DateTime.Now);
 
 report_fifth.GenerateInventoryReport();
+
+
+//====================================ВИКОРИСТАНННЯ ПРИНЦИПУ KEEP IT SIMPLE, STUPID====================================
+Console.WriteLine("\n\nВИКОРИСТАНННЯ ПРИНЦИПУ KEEP IT SIMPLE, STUPID");
+
+KISS.Money money_sixth = new KISS.Money(100, 15);
+
+KISS.Product product_sixth = new KISS.Product(money_sixth, "Манго", "Смачна та поживна їжа");
+KISS.Product product1_sixth = new KISS.Product(money_sixth, "Банан", "Смачний та корисний фрукт");
+product1_sixth.ReducePrice(10.30);
+Console.WriteLine(product1_sixth.getPrice());
+
+KISS.Reporting report_sixth = new KISS.Reporting();
+
+report_sixth.RegisterIncoming(product_sixth, 10, "kg", DateTime.Now);
+report_sixth.RegisterIncoming(product1_sixth, 12, "kg", DateTime.Now);
+
+report_sixth.GenerateInventoryReport();

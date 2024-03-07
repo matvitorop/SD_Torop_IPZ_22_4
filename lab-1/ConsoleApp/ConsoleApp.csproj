@@ -10,6 +10,7 @@
   <ItemGroup>
     <ProjectReference Include="..\DependencyIP\DependencyIP.csproj" />
     <ProjectReference Include="..\InterfaceSP\InterfaceSP.csproj" />
+    <ProjectReference Include="..\KISS\KISS.csproj" />
     <ProjectReference Include="..\LiskovSP\LiskovSP.csproj" />
     <ProjectReference Include="..\OpenClosed\OpenClosed.csproj" />
     <ProjectReference Include="..\Single Resposibility\Single Resposibility.csproj" />
