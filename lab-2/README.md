@@ -19,3 +19,5 @@ Principle of `Singleton`, that it mustn't be imitated and must be in one example
 Prototype classes can cloning by themselfs and get attributes of this clones. So this class has constructor for [getting attributes of clones](./Prototypes/Prototypes.cs#L27-L38) and method for [returning themselfs](./Prototypes/Prototypes.cs#L40-L43) for another objescts with the same type.
 ### Builder
 Builder was created for classes, that have really big structure, and can building them part by part. For [Person](./Builder/Person.cs) creating different builders as [HeroBuilder](./Builder/HeroBuilder.cs) and [EnemyBuilder](./Builder/EnemyBuilder.cs) that implement interface [IBuilder](./Builder/IBuilder.cs). Then, with help of class [Director](./Builder/Director.cs), we can creating different types of `Heroes`, by sending builders in `private` field with `builder type` and keeping an [fluent interface](./Builder/IBuilder.cs#L11-L16) at the same time. 
+
+**_Hope this code tutorial was useful for understanding structure of this solution. Please, send feedback for additional questions :)_**
