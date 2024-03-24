@@ -20,4 +20,5 @@ Prototype classes can cloning by themselfs and get attributes of this clones. So
 ### Builder
 Builder was created for classes, that have really big structure, and can building them part by part. For [Person](./Builder/Person.cs) creating different builders as [HeroBuilder](./Builder/HeroBuilder.cs) and [EnemyBuilder](./Builder/EnemyBuilder.cs) that implement interface [IBuilder](./Builder/IBuilder.cs). Then, with help of class [Director](./Builder/Director.cs), we can creating different types of `Heroes`, by sending builders in `private` field with `builder type` and keeping an [fluent interface](./Builder/IBuilder.cs#L11-L16) at the same time. 
 
+### All tests was demonstreted in [this file](./structure_test/Program.cs)
 **_Hope this code tutorial was useful for understanding structure of this solution. Please, send feedback for additional questions :)_**
