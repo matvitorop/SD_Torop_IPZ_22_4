@@ -6,13 +6,12 @@
 
         private static object _refObject = new object();
 
-
         private Authenticator()
         {
             Console.WriteLine("Making authentification");
         }
 
-        public static Authenticator GetInstance() 
+        public static Authenticator GetInstance()
         {
             if (Authenticator._authenticator == null)
             {

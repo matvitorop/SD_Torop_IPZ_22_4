@@ -9,6 +9,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\AbstractFactory\AbstractFactory.csproj" />
+    <ProjectReference Include="..\Prototypes\Prototypes.csproj" />
     <ProjectReference Include="..\Singleton\Singleton.csproj" />
     <ProjectReference Include="..\Subscription\Subscription.csproj" />
   </ItemGroup>
