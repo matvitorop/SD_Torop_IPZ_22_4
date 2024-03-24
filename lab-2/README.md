@@ -12,7 +12,7 @@
 ### Factory method
 In this pattern, I created abstract class Subscription, that describing behavior of subscription and [3 classes of different types of subscription](./Subscription/Subscriptions.cs#L19-L71) that `implement it`. Then I created `WebSite`, `MobileApp` and `ManagerCall` factories, that implement one interface `ISubscriptionFactoryMethod`, with [their own logic of creating](./Subscription/Factories.cs) of new subscriptions.
 ### Abstract factory
-This pattern is similar to `Factory method` but have it's own features. At first, i creating `interfaces of different gadgets` like smartphone, notebook, then i making [different gadgets](./AbstractFactory/Gadgets.cs#L18-L60) from different brands with different text in their method. At the second, i making factories by simmilar principle as gadgets, and in new factories, i [implement methods that returning gadgets by their father's type](./AbstractFactory/Factories.cs#L17-L50).
+This pattern is similar to `Factory method` but have it's own features. At first, I creating `interfaces of different gadgets` like smartphone, notebook, then I making [different gadgets](./AbstractFactory/Gadgets.cs#L18-L60) from different brands with different text in their method. At the second, I making factories by simmilar principle as gadgets, and in new factories, I [implement methods that returning gadgets by their father's type](./AbstractFactory/Factories.cs#L17-L50).
 ### Singleton
 Principle of `Singleton`, that it mustn't be imitated and must be in one example. This is done with the help of `sealed type of class`, `field of class's type` and by method [GetInstance](./Singleton/Singleton.cs#L14-L27).
 ### Prototype
