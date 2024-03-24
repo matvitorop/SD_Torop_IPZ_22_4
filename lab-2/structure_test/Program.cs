@@ -2,6 +2,7 @@
 using AbstractFactory;
 using Singleton;
 using Prototypes;
+using Builder;
 
 //=================================FACTORY METHOD TEST=================================
 Subscription.ISubscriptionFactoryMethod webSiteResponse = new Subscription.WebSite(); //Працюємо з абстрактним творцем-фабрикою
@@ -75,3 +76,21 @@ static void PrintVirusInfo(Virus virus)
     }
 }
 //=================================PROTOTYPE TEST=================================
+
+//=================================BUILDER TEST=================================
+var builder = new HeroBuilder();
+var builderTwo = new EnemyBuilder();
+
+var director = new Director(builder);
+
+Person person = director.GetFullPerson();
+
+Console.WriteLine(person.Inventory);
+
+director.SetBuilder(builderTwo);
+
+Person personTwo = director.GetFullPerson();
+
+Console.WriteLine(personTwo.Inventory);
+
+//=================================BUILDER TEST=================================
