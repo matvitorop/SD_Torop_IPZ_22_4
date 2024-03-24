@@ -1,5 +1,6 @@
 ﻿using Subscription;
 using AbstractFactory;
+using Singleton;
 
 //=================================FACTORY METHOD TEST=================================
 Subscription.ISubscriptionFactoryMethod webSiteResponse = new Subscription.WebSite(); //Працюємо з абстрактним творцем-фабрикою
@@ -28,3 +29,7 @@ SmatphoneTwo.GetSmartphone();//Створення смартфона з дург
 
 //=================================ABSTRACT FABRIC TEST=================================
 
+//=================================SINGLETON TEST=================================
+Authenticator authenticator = Authenticator.GetInstance();
+Authenticator authenticator2 = Authenticator.GetInstance();//конструктор викликається лише 1 раз
+//=================================SINGLETON TEST=================================
