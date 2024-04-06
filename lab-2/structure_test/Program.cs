@@ -5,7 +5,7 @@ using Prototypes;
 using Builder;
 
 //=================================FACTORY METHOD TEST=================================
-Subscription.ISubscriptionFactoryMethod webSiteResponse = new Subscription.WebSite(); //Працюємо з абстрактним творцем-фабрикою
+ISubscriptionFactoryMethod webSiteResponse = new WebSite(); //Працюємо з абстрактним творцем-фабрикою
 
 Subscription.Subscription subscription;//загальний ти підписки
 
