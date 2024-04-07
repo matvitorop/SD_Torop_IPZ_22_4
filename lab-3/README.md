@@ -7,7 +7,7 @@
   - [x] **Adapter**
   - [x] **Decorator**
   - [x] **Bridge**
-  - [ ] **Proxy**
+  - [x] **Proxy**
   - [ ] **Composer**
   - [ ] **LightWeight**
 ### Adapter
@@ -16,3 +16,5 @@ This pattern must make `target class` (old class) and `adaptee class` (new class
 Logic of decorator pattern - to create additional fuctionality for created or already used object. To create this logic, we must create decorator, that `have the same parent data type` as objects to modify. We can imagine this like new object, that enhances previous class and aggregates previous class to fill object, that we must improve. In my example, I created 3 classes (Palladin, Mage and Warrior) that implement [interface IHero](./Decorator/IHero.cs). Then i made [base decorator](./Decorator/HeroBaseDecorator.cs) that keeps IHero type object and have [virtual method for enhancing](./Decorator/HeroBaseDecorator.cs#L18-L21) and after that I made 2 decorators, that have their own logic. For example, decorator [WeaponDecorator](./Decorator/WeaponDecorator.cs). Also, as they `averyone have parent class IHero` they can [overlap one by one](./patterns_test/Program.cs#L29-L30) and with this we improve the functionality when we wont. 
 ### Bridge
 Bridge pattern is useful to davide big functionality of massive classes. Unfortunately, or luckily, this example is not huge to represent all functionality of this structural pattern. So I made class [Shape](./Bridge/Shape.cs) that `will be parent class` for different shapes. Besides, this class keeping object with major type [IRender](./Bridge/IRender.cs) that can include different types of rendering. Then, I made classes that implement `interface IRander` [RasterRender](./Bridge/RasterRender.cs) and [VectorRender](./Bridge/VectorRender.cs) with their own logic. At the end, i made 3 shapes, that inheritate class `Shape` and `using methods from IRender` to do some logic. Example you can see [here](./Bridge/Circle.cs#L15-L18). As the result we can adding different types of rendering for shapes, and can changing them when we want. Also this pattern reminds me an old music player, where you need change a disc to hear another music.
+### Proxy
+To not use some classes directly, we using proxy classes, that using same methods with same functionality but with can contaning additional features. For example, I made new interface [ITextReader](./Proxy/ITextReader.cs) with one method. Then I made [SmartTextReader](./Proxy/SmartTextReader.cs) that implements this interface, and then I made `2 similar classes` but they are [keeping object with interface data type](./Proxy/SmartTextChecker.cs#L11) and [use methods from this object](./Proxy/SmartTextChecker.cs#L22).
