@@ -9,7 +9,7 @@
   - [x] **Bridge**
   - [x] **Proxy**
   - [x] **Composer**
-  - [ ] **LightWeight**
+  - [x] **LightWeight**
 ### Adapter
 This pattern must make `target class` (old class) and `adaptee class` (new class) adjacent to each other. It useful when they have different data types. I made target class [Logger](./Adapter/Logger.cs) , that print in console text with different context and color. Then, I made [FileWriter](./Adapter/FileWriter.cs) that working as commands `Write` and `WriteLine` on C#. After this, i made [FileWriterAdapter](./Adapter/FileWriterAdapter.cs) that `imatates Logger` and takes `FileWriter as a field`. In the end, I overriding methods from `Logger`, combining them with `FileWriter` methods and adding [old functionality](./Adapter/FileWriterAdapter.cs#L22) for example.  
 ### Decorator
@@ -20,3 +20,5 @@ Bridge pattern is useful to davide big functionality of massive classes. Unfortu
 To not use some classes directly, we using proxy classes, that using same methods with same functionality but with can contaning additional features. For example, I made new interface [ITextReader](./Proxy/ITextReader.cs) with one method. Then I made [SmartTextReader](./Proxy/SmartTextReader.cs) that implements this interface, and then I made `2 similar classes` but they are [keeping object with interface data type](./Proxy/SmartTextChecker.cs#L11) and [use methods from this object](./Proxy/SmartTextChecker.cs#L22).
 ### Composer
 The main idea of this pattern - make a `tree-like` classes, that will keeping list of another classes. Both of them have same class or interface, that they implemented. One difference, `class composer` has additional features to use list of `leaf classes`. For example, I made [abstract class LightNode](./Composite/LightNode.cs) and 2 classes [LightTextNode](./Composite/LightTextNode.cs) and [LightElementNode](./Composite/LightElementNode.cs) that implement abstarct one. `LightTextNode` must keeping only text and returning only text, but `LightElementNode` can keeping `leafes` and can [generatring HTML outer code](./Composite/LightElementNode.cs#L46-L83) and [inner HTML](./Composite/LightElementNode.cs#L36-L44) `with using this leafes` that can be both `LightTextNode and LightElementNode`.    
+### LightWeight or FlyWeight
+This pattern must to decrease amount of using memory when we using the code. In my example, I created [FlyWeightFactory](./FlyWeight/FlyWeightFactory.cs) to keep there already used data. And then just using it in [book text converor](./FlyWeight/BookConvert.cs#L10). The result is not impressive, but a few KB was saved by this methods [real difference between 5-10KB](./FlyWeightTest/Program2.cs).  
