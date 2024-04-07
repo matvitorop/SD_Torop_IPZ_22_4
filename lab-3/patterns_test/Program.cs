@@ -55,7 +55,7 @@ circle.Draw();
 //=============================Testing BRIDGE pattern=============================
 
 
-//=============================Testing Proxy pattern=============================
+//=============================Testing PROXY pattern=============================
 SmartTextReader reader = new SmartTextReader();
 string[,] textArray = reader.ReadText("../../../../Proxy/TestText.txt");
 reader.DisplayTextArray(textArray);
@@ -65,9 +65,9 @@ string[,] textArray1 = smartTextChecker.ReadText("../../../../Proxy/TestText.txt
 
 ITextReader smartTextLocker = new SmartTextReaderLocker(reader, @"test\d\.txt");
 string[,] textArray2 = smartTextLocker.ReadText("test1.txt"); // Access denied!
-//=============================Testing Proxy pattern=============================
+//=============================Testing PROXY pattern=============================
 
-//=============================Testing Composite pattern=============================
+//=============================Testing COMPOSITE pattern=============================
 Console.WriteLine();
 
 LightElementNode body = new LightElementNode("body", "block", "closing", new List<string>());
@@ -89,4 +89,4 @@ body.addChild(div);
 
 // Виведення сторінки в консоль
 Console.WriteLine(body.OuterHTML());
-//=============================Testing Composite pattern=============================
+//=============================Testing COMPOSITE pattern=============================

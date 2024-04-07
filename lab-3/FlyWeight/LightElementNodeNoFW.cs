@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Composite
+namespace FlyWeight
 {
-    public class LightElementNode : LightNode
+    public class LightElementNodeNoFW : LightNode
     {
         private List<LightNode> children;
         private List<string> cssClasses;
@@ -14,7 +14,7 @@ namespace Composite
         private string displayType;
         private string closingType;
 
-        public LightElementNode(string tagName, string displayType, string closingType, List<string> cssClasses)
+        public LightElementNodeNoFW(string tagName, string displayType, string closingType, List<string> cssClasses)
         {
             this.tagName = tagName;
             this.displayType = displayType;
@@ -72,7 +72,5 @@ namespace Composite
 
             return sb.ToString();
         }
-
-
     }
 }

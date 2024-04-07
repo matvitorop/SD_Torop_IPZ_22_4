@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Composite
+namespace FlyWeight
 {
     public class LightElementNode : LightNode
     {
@@ -13,14 +13,16 @@ namespace Composite
         private string tagName;
         private string displayType;
         private string closingType;
+        private FlyweightFactory _flyweightFactory;
 
-        public LightElementNode(string tagName, string displayType, string closingType, List<string> cssClasses)
+        public LightElementNode(string tagName, string displayType, string closingType, List<string> cssClasses, FlyweightFactory flyweightFactory)
         {
-            this.tagName = tagName;
-            this.displayType = displayType;
-            this.closingType = closingType;
-            this.cssClasses = cssClasses;
+            this.tagName = flyweightFactory.GetFlyweight(tagName);
+            this.displayType = flyweightFactory.GetFlyweight(displayType);
+            this.closingType = flyweightFactory.GetFlyweight(closingType);
+            this.cssClasses = cssClasses.Select(css => flyweightFactory.GetFlyweight(css)).ToList();
             this.children = new List<LightNode>();
+            this._flyweightFactory = flyweightFactory;
         }
 
         public void addChild(LightNode node)
@@ -46,7 +48,7 @@ namespace Composite
         public override string OuterHTML()
         {
             StringBuilder sb = new StringBuilder();
-            sb.Append($"<{tagName} ");
+            sb.Append($"\n<{tagName} ");
 
             if (cssClasses.Count > 0)
             {
