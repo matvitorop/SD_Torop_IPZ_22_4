@@ -5,11 +5,13 @@ VisualStudioVersion = 17.9.34622.214
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "patterns_test", "patterns_test\patterns_test.csproj", "{54572C9D-971F-4AE4-B4E3-B3493E3F8B80}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Adapter", "Adapter\Adapter.csproj", "{7F8145B9-36DB-48E8-AFD0-CEA8C1D45ACE}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Adapter", "Adapter\Adapter.csproj", "{7F8145B9-36DB-48E8-AFD0-CEA8C1D45ACE}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Decorator", "Decorator\Decorator.csproj", "{0AFC584E-B4CA-4BE8-A590-4ED8B67E30EF}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Decorator", "Decorator\Decorator.csproj", "{0AFC584E-B4CA-4BE8-A590-4ED8B67E30EF}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Bridge", "Bridge\Bridge.csproj", "{7AEC0A65-7983-45B6-BB42-D894FC184B93}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Bridge", "Bridge\Bridge.csproj", "{7AEC0A65-7983-45B6-BB42-D894FC184B93}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Proxy", "Proxy\Proxy.csproj", "{513341D1-7BC4-4B3A-8552-359D09AB5F4F}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -33,6 +35,10 @@ Global
 		{7AEC0A65-7983-45B6-BB42-D894FC184B93}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{7AEC0A65-7983-45B6-BB42-D894FC184B93}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{7AEC0A65-7983-45B6-BB42-D894FC184B93}.Release|Any CPU.Build.0 = Release|Any CPU
+		{513341D1-7BC4-4B3A-8552-359D09AB5F4F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{513341D1-7BC4-4B3A-8552-359D09AB5F4F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{513341D1-7BC4-4B3A-8552-359D09AB5F4F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{513341D1-7BC4-4B3A-8552-359D09AB5F4F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

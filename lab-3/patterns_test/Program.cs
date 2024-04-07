@@ -1,6 +1,7 @@
 ﻿using Adapter;
 using Decorator;
 using Bridge;
+using Proxy;
 using static System.Net.Mime.MediaTypeNames;
 using System.Threading;
 //=============================Testing ADAPTER pattern=============================
@@ -51,3 +52,16 @@ triangle.Draw();
 circle.changeRender(rasterRenderer);
 circle.Draw();
 //=============================Testing BRIDGE pattern=============================
+
+
+//=============================Testing Proxy pattern=============================
+SmartTextReader reader = new SmartTextReader();
+string[,] textArray = reader.ReadText("../../../../Proxy/TestText.txt");
+reader.DisplayTextArray(textArray);
+
+ITextReader smartTextChecker = new SmartTextChecker(reader);
+string[,] textArray1 = smartTextChecker.ReadText("../../../../Proxy/TestText.txt");
+
+ITextReader smartTextLocker = new SmartTextReaderLocker(reader, @"test\d\.txt");
+string[,] textArray2 = smartTextLocker.ReadText("test1.txt"); // Access denied!
+//=============================Testing Proxy pattern=============================
