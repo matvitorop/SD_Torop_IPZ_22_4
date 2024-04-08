@@ -9,20 +9,14 @@ namespace FlyWeight
     public class LightElementNode : LightNode
     {
         private List<LightNode> children;
-        private List<string> cssClasses;
-        private string tagName;
-        private string displayType;
-        private string closingType;
-        private FlyweightFactory _flyweightFactory;
+        private TagsRemember _tagsRemember;
 
-        public LightElementNode(string tagName, string displayType, string closingType, List<string> cssClasses, FlyweightFactory flyweightFactory)
+        public LightElementNode(TagsRemember tagsRemember, string key, FlyweightFactory flyweight)
         {
-            this.tagName = flyweightFactory.GetFlyweight(tagName);
-            this.displayType = flyweightFactory.GetFlyweight(displayType);
-            this.closingType = flyweightFactory.GetFlyweight(closingType);
-            this.cssClasses = cssClasses.Select(css => flyweightFactory.GetFlyweight(css)).ToList();
+            this._tagsRemember = tagsRemember;
+            _tagsRemember = flyweight.GetFlyweight(key);
+
             this.children = new List<LightNode>();
-            this._flyweightFactory = flyweightFactory;
         }
 
         public void addChild(LightNode node)
@@ -32,7 +26,7 @@ namespace FlyWeight
 
         public void addClass(string css)
         {
-            cssClasses.Add(css);
+            _tagsRemember.cssClasses.Add(css);
         }
 
         public override string InnerHTML()
@@ -48,14 +42,14 @@ namespace FlyWeight
         public override string OuterHTML()
         {
             StringBuilder sb = new StringBuilder();
-            sb.Append($"\n<{tagName} ");
+            sb.Append($"\n<{_tagsRemember.tagName} ");
 
-            if (cssClasses.Count > 0)
+            if (_tagsRemember.cssClasses.Count > 0)
             {
-                sb.Append($"class=\"{string.Join(" ", cssClasses)}\" ");
+                sb.Append($"class=\"{string.Join(" ", _tagsRemember.cssClasses)}\" ");
             }
             sb.Append(">");
-            if (displayType == "block")
+            if (_tagsRemember.displayType == "block")
             {
                 sb.AppendLine();
             }
@@ -63,18 +57,16 @@ namespace FlyWeight
             {
                 sb.Append(child.OuterHTML());
             }
-            if (closingType == "closing")
+            if (_tagsRemember.closingType == "closing")
             {
-                sb.Append($"</{tagName}>");
+                sb.Append($"</{_tagsRemember.tagName}>");
             }
-            else if (closingType == "self-closing")
+            else if (_tagsRemember.closingType == "self-closing")
             {
                 sb.Append("/>");
             }
 
             return sb.ToString();
         }
-
-
     }
 }

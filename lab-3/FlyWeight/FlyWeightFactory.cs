@@ -8,13 +8,14 @@ namespace FlyWeight
 {
     public class FlyweightFactory
     {
-        private Dictionary<string, string> _flyweights = new Dictionary<string, string>();
+        private Dictionary<string, TagsRemember> _flyweights = new Dictionary<string, TagsRemember>();
 
-        public string GetFlyweight(string key)
+        public TagsRemember GetFlyweight(string key)
         {
             if (!_flyweights.ContainsKey(key))
             {
-                _flyweights[key] = key;
+                // Create a new TagsRemember object with default values
+                _flyweights[key] = new TagsRemember { tagName = key, displayType = "inline", closingType = "closing", cssClasses = new List<string>() };
             }
             return _flyweights[key];
         }
