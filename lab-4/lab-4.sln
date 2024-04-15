@@ -5,6 +5,8 @@ VisualStudioVersion = 17.9.34622.214
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "patterns_test", "patterns_test\patterns_test.csproj", "{DF8EAC6A-4ABF-4C43-9354-BC0D630A0791}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CoR", "CoR\CoR.csproj", "{C253A590-DB03-46E7-B1FA-3B4476C73566}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{DF8EAC6A-4ABF-4C43-9354-BC0D630A0791}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{DF8EAC6A-4ABF-4C43-9354-BC0D630A0791}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{DF8EAC6A-4ABF-4C43-9354-BC0D630A0791}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C253A590-DB03-46E7-B1FA-3B4476C73566}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C253A590-DB03-46E7-B1FA-3B4476C73566}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C253A590-DB03-46E7-B1FA-3B4476C73566}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C253A590-DB03-46E7-B1FA-3B4476C73566}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
