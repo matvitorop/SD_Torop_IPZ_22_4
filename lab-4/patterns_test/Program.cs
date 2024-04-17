@@ -1,5 +1,6 @@
 ﻿using CoR;
 using Strategy;
+using Memento;
 
 //=============================Testing CoR pattern=============================
 //var handler1 = new HandlerLvl1();
@@ -43,3 +44,22 @@ else
 
 imageLoader.ImageLoad(href);
 //=============================Testing Strategy pattern=============================
+
+//=============================Testing Memento pattern=============================
+TextDocument document = new TextDocument("Version of text #1");
+
+TextEditor td = new TextEditor(document);
+td.PrintDocument();
+td.Backup();
+td.textAppend("\nAdditional part for version #2");
+td.Backup();
+td.PrintDocument();
+td.ChangeText("\nWrong version #3");
+td.PrintDocument();
+Console.WriteLine("\nRestored version:");
+td.Restore();
+td.PrintDocument();
+Console.WriteLine("\nAgain restored version:");
+td.Restore();
+td.PrintDocument();
+//=============================Testing Memento pattern=============================
