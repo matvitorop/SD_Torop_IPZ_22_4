@@ -1,6 +1,7 @@
 ﻿using CoR;
 using Strategy;
 using Memento;
+using Observer;
 
 //=============================Testing CoR pattern=============================
 //var handler1 = new HandlerLvl1();
@@ -46,20 +47,33 @@ imageLoader.ImageLoad(href);
 //=============================Testing Strategy pattern=============================
 
 //=============================Testing Memento pattern=============================
-TextDocument document = new TextDocument("Version of text #1");
-
-TextEditor td = new TextEditor(document);
-td.PrintDocument();
-td.Backup();
-td.textAppend("\nAdditional part for version #2");
-td.Backup();
-td.PrintDocument();
-td.ChangeText("\nWrong version #3");
-td.PrintDocument();
-Console.WriteLine("\nRestored version:");
-td.Restore();
-td.PrintDocument();
-Console.WriteLine("\nAgain restored version:");
-td.Restore();
-td.PrintDocument();
+//TextDocument document = new TextDocument("Version of text #1");
+//
+//TextEditor td = new TextEditor(document);
+//td.PrintDocument();
+//td.Backup();
+//td.textAppend("\nAdditional part for version #2");
+//td.Backup();
+//td.PrintDocument();
+//td.ChangeText("\nWrong version #3");
+//td.PrintDocument();
+//Console.WriteLine("\nRestored version:");
+//td.Restore();
+//td.PrintDocument();
+//Console.WriteLine("\nAgain restored version:");
+//td.Restore();
+//td.PrintDocument();
 //=============================Testing Memento pattern=============================
+
+//=============================Testing Observer pattern=============================
+LightElementNode element = new LightElementNode("button", "block", "closing", new List<string>() { "btn", "btn-body" });
+
+ClickEventListener clickListener = new ClickEventListener();
+MouseOverEventListener mouseOverListener = new MouseOverEventListener();
+
+element.AddEventListener(clickListener);
+element.AddEventListener(mouseOverListener);
+
+element.TriggerEvent("click");
+element.TriggerEvent("mouseover");
+//=============================Testing Observer pattern=============================
