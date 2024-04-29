@@ -88,5 +88,9 @@ div.addChild(img);
 body.addChild(div);
 
 // Виведення сторінки в консоль
-Console.WriteLine(body.OuterHTML());
+//Console.WriteLine(body.OuterHTML());
+
+Console.WriteLine("\nТестування патерну Template \n");
+body.Template();
+
 //=============================Testing COMPOSITE pattern=============================
