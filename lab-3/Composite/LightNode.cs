@@ -4,5 +4,7 @@
     {
         public abstract string OuterHTML();
         public abstract string InnerHTML();
+
+        public abstract IIterator CreateIterator();
     }
 }
