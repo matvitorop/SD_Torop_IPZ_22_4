@@ -109,6 +109,30 @@ foreach (var node in iterator.TraverseBreadthFirst())
 {
     Console.WriteLine(node.OuterHTML());
 }
+
+
+//ДОДАВАННЯ ЕЛЕМЕНТІВ ДЛЯ ПЕРЕВІРКИ COMMAND
+Console.WriteLine("\nTESTING COMMAND PATTERN: \n");
+LightElementNode element = new LightElementNode("body", "block", "closing", new List<string>());
+
+ICommand addChildCommand = new AddChildCommand(element, new LightTextNode("Hello, world!"));
+ICommand addClassCommand = new AddClassCommand(element, "example-class");
+
+Invoker invoker = new Invoker(new List<ICommand>
+{
+    addChildCommand,
+    addClassCommand
+});
+
+Console.WriteLine("\nAFTER EXECUTE: \n");
+invoker.ExecuteCommands();
+Console.WriteLine(element.OuterHTML());
+
+Console.WriteLine("\nAFTER UNDO: \n");
+invoker.UndoLastCommand();
+invoker.UndoLastCommand();
+invoker.UndoLastCommand();
+Console.WriteLine(element.OuterHTML());
 // Виведення сторінки в консоль
 //Console.WriteLine(body.OuterHTML());
 //=============================Testing COMPOSITE pattern=============================

@@ -27,10 +27,19 @@ namespace Composite
         {
             children.Add(node);
         }
+        public void removeChild(LightNode node)
+        {
+            children.Remove(node);
+        }
 
         public void addClass(string css)
         {
             cssClasses.Add(css);
+        }
+
+        public void removeClass(string css)
+        {
+            cssClasses.Remove(css);
         }
 
         public override string InnerHTML()
