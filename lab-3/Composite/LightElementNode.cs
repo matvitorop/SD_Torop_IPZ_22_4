@@ -8,7 +8,7 @@ namespace Composite
 {
     public class LightElementNode : LightNode
     {
-        private List<LightNode> children;
+        public List<LightNode> children;
         private List<string> cssClasses;
         private string tagName;
         public string displayType;
@@ -78,10 +78,19 @@ namespace Composite
         {   
             children.Add(node);
         }
+        public void removeChild(LightNode node)
+        {
+            children.Remove(node);
+        }
 
         public void addClass(string css)
         {
             cssClasses.Add(css);
+        }
+
+        public void removeClass(string css)
+        {
+            cssClasses.Remove(css);
         }
 
         public override string InnerHTML()
@@ -128,7 +137,6 @@ namespace Composite
             
             return sb.ToString();
         }
-
 
     }
 }
