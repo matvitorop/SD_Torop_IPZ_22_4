@@ -138,5 +138,36 @@ namespace Composite
             return sb.ToString();
         }
 
+        public override bool OnCreated()
+        {
+            if (tagName != "" && closingType != "")
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
+
+        public override bool OnStylesApplied()
+        {
+            if (cssClasses.Count > 0)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
+        public override void ElementSaving()
+        {
+            Console.WriteLine("Creating backup...");
+            Console.WriteLine("Trying to save...");
+            Console.WriteLine("Saving successful...");
+        }
+
+
     }
 }
