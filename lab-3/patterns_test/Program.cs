@@ -87,8 +87,19 @@ div.addChild(img);
 
 body.addChild(div);
 
+
+
+/*Console.WriteLine("\nТЕСТУВАННЯ ПАТЕРНУ STATE\n");
+LightElementNode div_state = new LightElementNode("div", "block", "closing", new List<string> { "container" });
+LightElementNode p_state = new LightElementNode("p", "inline", "closing", new List<string> { "paragraph" });
+LightTextNode text_state = new LightTextNode("Sample text");
+div_state.addChild(p_state);
+p_state.addChild(text_state);
+
+Console.WriteLine(div_state.OuterHTML());*/
+
 //ДОДАВАННЯ ЕЛЕМЕНТІВ ДЛЯ ПЕРЕВІРКИ ІТЕРАТОРА
-LightElementNode div_two = new LightElementNode("div", "block", "closing", new List<string> { "container" });
+/*LightElementNode div_two = new LightElementNode("div", "block", "closing", new List<string> { "container" });
 LightElementNode p_two = new LightElementNode("p", "block", "closing", new List<string>());
 p_two.addChild(new LightTextNode("Just testing ITERATOR."));
 
@@ -109,7 +120,7 @@ foreach (var node in iterator.TraverseBreadthFirst())
 {
     Console.WriteLine(node.OuterHTML());
 }
-
+*/
 
 //ДОДАВАННЯ ЕЛЕМЕНТІВ ДЛЯ ПЕРЕВІРКИ COMMAND
 Console.WriteLine("\nTESTING COMMAND PATTERN: \n");
@@ -133,6 +144,7 @@ invoker.UndoLastCommand();
 invoker.UndoLastCommand();
 invoker.UndoLastCommand();
 Console.WriteLine(element.OuterHTML());
+
 // Виведення сторінки в консоль
 //Console.WriteLine(body.OuterHTML());
 //=============================Testing COMPOSITE pattern=============================

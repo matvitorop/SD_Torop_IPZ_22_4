@@ -11,8 +11,14 @@ namespace Composite
         public List<LightNode> children;
         private List<string> cssClasses;
         private string tagName;
-        private string displayType;
-        private string closingType;
+        public string displayType;
+        public string closingType;
+
+        private NodeState displayState;
+        private NodeState closingState;
+
+        public string DisplayType { get => displayType; }
+        public string ClosingType { get => closingType; }
 
         public LightElementNode(string tagName, string displayType, string closingType, List<string> cssClasses)
         {
@@ -21,10 +27,55 @@ namespace Composite
             this.closingType = closingType;
             this.cssClasses = cssClasses;
             this.children = new List<LightNode>();
+
+            if (displayType == "block")
+                displayState = new BlockDisplayState(this);
+            else
+                displayState = new InlineDisplayState(this);
+
+            if (closingType == "closing")
+                closingState = new ClosingState(this);
+            else
+                closingState = new SelfClosingState(this);
+        }
+        public void SetDisplayState(string newDisplayType)
+        {
+            if (newDisplayType != displayType)
+            {
+                if (newDisplayType == "block")
+                {
+                    displayType = newDisplayType;
+                    displayState = new BlockDisplayState(this);
+                }
+                else
+                {
+                    displayType = "inline";
+                    displayState = new InlineDisplayState(this);
+                }
+                    
+            }
+        }
+
+        public void SetClosingState(string newClosingType)
+        {
+            if (newClosingType != closingType)
+            {
+                if (newClosingType == "closing")
+                {
+                    closingType = newClosingType;
+                    closingState = new ClosingState(this);
+                }
+                else
+                {
+                    closingType = "self-closing";
+                    closingState = new SelfClosingState(this);
+                }
+
+            }
         }
 
         public void addChild(LightNode node)
-        {
+        {   
             children.Add(node);
         }
         public void removeChild(LightNode node)
@@ -62,6 +113,9 @@ namespace Composite
                 sb.Append($"class=\"{string.Join(" ", cssClasses)}\" ");
             }
             sb.Append(">");
+
+            displayState.Handle();
+
             if (displayType == "block")
             {
                 sb.AppendLine();
@@ -79,6 +133,8 @@ namespace Composite
                 sb.Append("/>");
             }
 
+            closingState.Handle();
+            
             return sb.ToString();
         }
 
