@@ -6,10 +6,11 @@ using System.Threading.Tasks;
 
 namespace Composite
 {
-    public class LightElementNode : LightNode
+    public class LightElementNode : LightNode, INodeVisitable
     {
         public List<LightNode> children;
-        private List<string> cssClasses;
+        public List<string> cssClasses;
+        
         private string tagName;
         public string displayType;
         public string closingType;
@@ -138,6 +139,11 @@ namespace Composite
             return sb.ToString();
         }
 
+        public void Accept(INodeVisitor visitor)
+        {
+            visitor.Visit(this);
+        }
+        
         public override bool OnCreated()
         {
             if (tagName != "" && closingType != "")
@@ -167,7 +173,6 @@ namespace Composite
             Console.WriteLine("Trying to save...");
             Console.WriteLine("Saving successful...");
         }
-
 
     }
 }

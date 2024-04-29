@@ -6,9 +6,9 @@ using System.Threading.Tasks;
 
 namespace Composite
 {
-    public class LightTextNode : LightNode
+    public class LightTextNode : LightNode, INodeVisitable
     {
-        private string _text;
+        public string _text;
         
         public LightTextNode(string text)
         {
@@ -24,6 +24,9 @@ namespace Composite
         {
             return _text;
         }
-
+        public void Accept(INodeVisitor visitor)
+        {
+            visitor.Visit(this);
+        }
     }
 }

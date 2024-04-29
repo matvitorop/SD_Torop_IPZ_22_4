@@ -146,8 +146,20 @@ invoker.UndoLastCommand();
 Console.WriteLine(element.OuterHTML());
 
 // Виведення сторінки в консоль
-//Console.WriteLine(body.OuterHTML());
 
+/*Console.WriteLine(body.OuterHTML());
+
+
+Console.WriteLine("\nТестування патерну Visitor \n");
+var text = new LightTextNode("default");
+var defaultVisitor = new DefaultVisitor();
+body.Accept(defaultVisitor);
+text.Accept(defaultVisitor);
+Console.WriteLine(body.cssClasses[0]);
+Console.WriteLine(body.cssClasses[1]);*/
+
+
+//Console.WriteLine(body.OuterHTML());
 //Console.WriteLine("\nТестування патерну Template \n");
 //body.Template();
 
