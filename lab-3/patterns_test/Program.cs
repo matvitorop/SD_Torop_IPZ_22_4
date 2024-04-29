@@ -87,6 +87,15 @@ div.addChild(img);
 
 body.addChild(div);
 
+
+Console.WriteLine("\nТЕСТУВАННЯ ПАТЕРНУ STATE\n");
+LightElementNode div_state = new LightElementNode("div", "block", "closing", new List<string> { "container" });
+LightElementNode p_state = new LightElementNode("p", "inline", "closing", new List<string> { "paragraph" });
+LightTextNode text_state = new LightTextNode("Sample text");
+div_state.addChild(p_state);
+p_state.addChild(text_state);
+
+Console.WriteLine(div_state.OuterHTML());
 // Виведення сторінки в консоль
-Console.WriteLine(body.OuterHTML());
+//Console.WriteLine(body.OuterHTML());
 //=============================Testing COMPOSITE pattern=============================
