@@ -5,6 +5,9 @@
         public abstract string OuterHTML();
         public abstract string InnerHTML();
 
-        public abstract IIterator CreateIterator();
+        public IIterator CreateIterator()
+        {
+            return new NodeIterator(this);
+        }
     }
 }
