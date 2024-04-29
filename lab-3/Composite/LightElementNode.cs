@@ -8,7 +8,7 @@ namespace Composite
 {
     public class LightElementNode : LightNode
     {
-        private List<LightNode> children;
+        public List<LightNode> children;
         private List<string> cssClasses;
         private string tagName;
         private string displayType;
@@ -72,7 +72,6 @@ namespace Composite
 
             return sb.ToString();
         }
-
 
     }
 }

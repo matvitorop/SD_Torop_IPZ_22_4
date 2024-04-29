@@ -87,6 +87,28 @@ div.addChild(img);
 
 body.addChild(div);
 
+//ДОДАВАННЯ ЕЛЕМЕНТІВ ДЛЯ ПЕРЕВІРКИ ІТЕРАТОРА
+LightElementNode div_two = new LightElementNode("div", "block", "closing", new List<string> { "container" });
+LightElementNode p_two = new LightElementNode("p", "block", "closing", new List<string>());
+p_two.addChild(new LightTextNode("Just testing ITERATOR."));
+
+div_two.addChild(p_two);
+
+body.addChild(div_two);
+
+IIterator iterator = body.CreateIterator();
+
+Console.WriteLine("Depth-First Search:");
+foreach (var node in iterator.TraverseDepthFirst())
+{
+    Console.WriteLine(node.OuterHTML());
+}
+
+Console.WriteLine("\nBreadth-First Search:");
+foreach (var node in iterator.TraverseBreadthFirst())
+{
+    Console.WriteLine(node.OuterHTML());
+}
 // Виведення сторінки в консоль
-Console.WriteLine(body.OuterHTML());
+//Console.WriteLine(body.OuterHTML());
 //=============================Testing COMPOSITE pattern=============================
