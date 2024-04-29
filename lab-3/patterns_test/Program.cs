@@ -89,4 +89,13 @@ body.addChild(div);
 
 // Виведення сторінки в консоль
 Console.WriteLine(body.OuterHTML());
+
+
+Console.WriteLine("\nТестування патерну Visitor \n");
+var text = new LightTextNode("default");
+var defaultVisitor = new DefaultVisitor();
+body.Accept(defaultVisitor);
+text.Accept(defaultVisitor);
+Console.WriteLine(body.cssClasses[0]);
+Console.WriteLine(body.cssClasses[1]);
 //=============================Testing COMPOSITE pattern=============================

@@ -6,10 +6,10 @@ using System.Threading.Tasks;
 
 namespace Composite
 {
-    public class LightElementNode : LightNode
+    public class LightElementNode : LightNode, INodeVisitable
     {
         private List<LightNode> children;
-        private List<string> cssClasses;
+        public List<string> cssClasses;
         private string tagName;
         private string displayType;
         private string closingType;
@@ -73,6 +73,9 @@ namespace Composite
             return sb.ToString();
         }
 
-
+        public void Accept(INodeVisitor visitor)
+        {
+            visitor.Visit(this);
+        }
     }
 }
