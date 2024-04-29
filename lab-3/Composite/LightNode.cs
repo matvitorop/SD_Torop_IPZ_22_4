@@ -33,6 +33,10 @@
 
                 ElementSaving();
             }
+            
+        public IIterator CreateIterator()
+        {
+            return new NodeIterator(this);
         }
     }
 }

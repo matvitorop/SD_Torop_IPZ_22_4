@@ -24,5 +24,6 @@ namespace Composite
         {
             return _text;
         }
+
     }
 }
